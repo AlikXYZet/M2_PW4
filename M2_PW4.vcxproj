@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1. Find.cpp" />
+    <ClCompile Include="2. Count_if.cpp" />
+    <ClCompile Include="3. For_each.cpp" />
     <ClCompile Include="PW4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PW4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
