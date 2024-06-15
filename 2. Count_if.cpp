@@ -38,9 +38,9 @@ int main2()
 	}
 
 	std::cout << "Вывод всех игроков (std::unordered_map):" << std::endl;
-	for (Players::iterator itL = pawns.begin(); itL != pawns.end(); ++itL)
+	for (Players::value_type iValue : pawns)
 	{
-		std::cout << std::setw(6) << itL->first + ':' << itL->second << '\n';
+		std::cout << std::setw(6) << iValue.first + ':' << iValue.second << '\n';
 	}
 	std::cout << std::endl;
 

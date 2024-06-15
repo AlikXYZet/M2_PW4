@@ -38,9 +38,9 @@ int main1()
 
 
 	std::cout << "Вывод всех названий баллонов и их давление (std::map):" << std::endl;
-	for (Pressure::iterator itL = cylinders.begin(); itL != cylinders.end(); ++itL)
+	for (Pressure::value_type iValue : cylinders)
 	{
-		std::cout << std::setw(11) << itL->first + ':' << itL->second << '\n';
+		std::cout << std::setw(11) << iValue.first + ':' << iValue.second << '\n';
 	}
 	std::cout << std::endl;
 
@@ -52,9 +52,9 @@ int main1()
 		<< std::setw(15) << "Цел ли синий:"
 		<< std::setw(15) << "Все ли целы:"
 		<< " { ";
-	for (Pressure::iterator itL = cylinders.begin(); itL != cylinders.end(); ++itL)
+	for (Pressure::value_type iValue : cylinders)
 	{
-		std::cout << itL->first[0] << ' ';
+		std::cout << iValue.first[0] << ' ';
 	}
 	std::cout << '}' << std::endl;
 	/* -------------------------------------------- */
@@ -124,7 +124,7 @@ int main1()
 		if (std::all_of(cylinders.begin(), cylinders.end(), cheсk_none_of))
 			bCycle = false;
 
-		// Вывод значений каждого элемента
+		// Вывод значений каждого элемента с последующим его изменением
 		std::cout << " { ";
 		for (Pressure::iterator itL = cylinders.begin(); itL != cylinders.end(); ++itL)
 		{
