@@ -1,11 +1,11 @@
 ﻿#include "PW4.h"
 
 // Выбор демонстрации по умолчанию
-int DefaultSelection = 1;
+int DefaultSelection = 2;
 // Количество демонстраций
 int MaxSelection = 3;
 
-bool MainSelection(int sel)
+bool MainSelection(int& sel)
 {
 	switch (sel)
 	{
@@ -39,6 +39,8 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	// <iomanip>: Выравнивание по левому краю
 	std::cout << std::setiosflags(std::ios::left);
+	// Использовать текущее время в качестве начального значения для генератора псевдослучайных чисел
+	srand(time(0));
 
 	std::cout << "Пример использования алгоритмов:\n"
 		<< std::setw(12) << "1. find" << "для  std::map\n"

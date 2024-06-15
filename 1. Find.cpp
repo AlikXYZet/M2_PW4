@@ -2,18 +2,20 @@
 
 #include <map>
 
+/*---   Предварительное   ---*/
 
 // Реализация std::map
 typedef std::map<std::string, int> Pressure;
 
-// Псевдо-рандом в диапазоне [min, max]
-int Random(int min, int max)
+// Рандом в диапазоне [min, max]
+const int Random(const int& min, const int& max)
 {
 	if (min <= max)
 		return min + rand() % (max + 1 - min); // диапазон [min, max]
 	else
 		return 0;
-}
+};
+/* -------------------------------------------- */
 
 
 
@@ -61,29 +63,30 @@ int main1()
 
 	/*---   Предикаты   ---*/
 	// Проверка: На пределе
-	auto cheсk_all_of = [](const auto& elem)
+	auto cheсk_all_of = [](const Pressure::value_type& elem)
 	{
 		return elem.second > 3;
 	};
 
 	// Проверка: Цел ли хоть один Синий
-	auto cheсk_any_of = [](const auto& elem)
+	auto cheсk_any_of = [](const Pressure::value_type& elem)
 	{
-		if (elem.first.find("Синий"))
+		if (elem.first.find("Синий") != std::string::npos)
+		{
 			return elem.second > 0;
-		else
-			return false;
+		}
+		return false;
 	};
 
 	// Проверка: Все ли целы
-	auto cheсk_none_of = [](const auto& elem)
+	auto cheсk_none_of = [](const Pressure::value_type& elem)
 	{
 		return elem.second == 0;
 	};
 	/* -------------------------------------------- */
 
 
-	// 
+	// Цикл проверок
 	bool bCycle = true;
 	while (bCycle)
 	{
