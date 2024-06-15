@@ -1,7 +1,7 @@
 ﻿#include "PW4.h"
 
 // Выбор демонстрации по умолчанию
-int DefaultSelection = 3;
+int DefaultSelection = 1;
 // Количество демонстраций
 int MaxSelection = 3;
 
